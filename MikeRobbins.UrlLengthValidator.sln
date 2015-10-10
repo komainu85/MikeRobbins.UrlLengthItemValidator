@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MikeRobbins.UrlLengthValidator", "MikeRobbins.UrlLengthValidator\MikeRobbins.UrlLengthValidator.csproj", "{9C53EBBE-EED9-4CD5-94F4-3799CA67678C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MikeRobbins.UrlLengthItemValidator", "MikeRobbins.UrlLengthValidator\MikeRobbins.UrlLengthItemValidator.csproj", "{9C53EBBE-EED9-4CD5-94F4-3799CA67678C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MikeRobbins.UrlLengthValidator.Tests", "MikeRobbins.UrlLengthValidator.Tests\MikeRobbins.UrlLengthValidator.Tests.csproj", "{219A851C-A62F-474F-A91B-AC9577A3E7B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MikeRobbins.UrlLengthItemValidator.Tests", "MikeRobbins.UrlLengthValidator.Tests\MikeRobbins.UrlLengthItemValidator.Tests.csproj", "{219A851C-A62F-474F-A91B-AC9577A3E7B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

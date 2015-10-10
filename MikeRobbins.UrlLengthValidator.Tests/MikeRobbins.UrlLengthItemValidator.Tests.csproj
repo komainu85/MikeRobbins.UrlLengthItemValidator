@@ -7,8 +7,8 @@
     <ProjectGuid>{219A851C-A62F-474F-A91B-AC9577A3E7B5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MikeRobbins.UrlLengthValidator.Tests</RootNamespace>
-    <AssemblyName>MikeRobbins.UrlLengthValidator.Tests</AssemblyName>
+    <RootNamespace>MikeRobbins.UrlLengthItemValidator.Tests</RootNamespace>
+    <AssemblyName>MikeRobbins.UrlLengthItemValidator.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Lucene.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Moq, Version=4.2.1507.118, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
@@ -38,9 +42,22 @@
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>..\..\..\..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Analytics.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.FakeDb, Version=0.31.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.FakeDb.0.31.1\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\..\..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="sitecore.nexus">
+      <HintPath>..\..\..\..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\sitecore.nexus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemUrlTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,9 +78,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MikeRobbins.UrlLengthValidator\MikeRobbins.UrlLengthValidator.csproj">
+    <ProjectReference Include="..\MikeRobbins.UrlLengthValidator\MikeRobbins.UrlLengthItemValidator.csproj">
       <Project>{9c53ebbe-eed9-4cd5-94f4-3799ca67678c}</Project>
-      <Name>MikeRobbins.UrlLengthValidator</Name>
+      <Name>MikeRobbins.UrlLengthItemValidator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
