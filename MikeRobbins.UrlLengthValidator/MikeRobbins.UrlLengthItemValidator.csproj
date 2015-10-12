@@ -55,6 +55,14 @@
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.6.186, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.6.186\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -87,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Contracts\IUrlLengthCalculator.cs" />
     <Compile Include="Contracts\IUrlValidator.cs" />
+    <Compile Include="IoC\Registry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Contracts\ISitecoreLinkManager.cs" />
     <Compile Include="Providers\Contracts\ISettingsProvider.cs" />

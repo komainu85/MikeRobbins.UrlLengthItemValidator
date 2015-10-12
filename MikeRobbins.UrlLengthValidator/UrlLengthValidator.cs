@@ -7,6 +7,8 @@ using Sitecore.Data.Validators;
 using Sitecore.Globalization;
 using Sitecore.Links;
 using Sitecore.Web;
+using Sitecore.Web.UI.HtmlControls;
+using StructureMap;
 
 namespace MikeRobbins.UrlLengthItemValidator
 {
@@ -16,12 +18,14 @@ namespace MikeRobbins.UrlLengthItemValidator
         private IUrlLengthCalculator _urlLengthCalculator;
         private ISiteProvider _siteProvider;
 
+        Container _container = new StructureMap.Container(new IoC.Registry());
+
+
         public UrlLengthValidator()
         {
-            //ToDo: Remove these, locator
-            _urlValidator = new UrlValidator(new SettingsProvider());
-            _urlLengthCalculator = new UrlLengthCalculator(new SitecoreLinkManager());
-            _siteProvider = new SiteProvider();
+            _urlValidator = _container.GetInstance<IUrlValidator>();
+            _urlLengthCalculator = _container.GetInstance<IUrlLengthCalculator>();
+            _siteProvider = _container.GetInstance<ISiteProvider>();
         }
 
         protected override ValidatorResult Evaluate()
