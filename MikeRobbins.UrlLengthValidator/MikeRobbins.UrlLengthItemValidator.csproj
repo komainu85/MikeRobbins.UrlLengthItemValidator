@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IUrlLengthCalculator.cs" />
+    <Compile Include="Contracts\IUrlValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Contracts\ISitecoreLinkManager.cs" />
     <Compile Include="Providers\Contracts\ISettingsProvider.cs" />

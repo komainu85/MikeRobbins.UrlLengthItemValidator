@@ -1,8 +1,9 @@
-﻿using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
+﻿using MikeRobbins.UrlLengthItemValidator.Contracts;
+using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
 
 namespace MikeRobbins.UrlLengthItemValidator
 {
-    public class UrlValidator
+    public class UrlValidator : IUrlValidator
     {
         private const string _maxUrlLength = "MaxUrlLength";
 
