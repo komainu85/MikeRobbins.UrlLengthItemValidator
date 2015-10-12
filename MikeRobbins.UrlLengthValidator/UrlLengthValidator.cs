@@ -1,10 +1,12 @@
 ﻿using System.Web;
 using MikeRobbins.UrlLengthItemValidator.Contracts;
+using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
 using MikeRobbins.UrlLengthItemValidator.Providers.Implementation;
 using Sitecore.Data.Items;
 using Sitecore.Data.Validators;
 using Sitecore.Globalization;
 using Sitecore.Links;
+using Sitecore.Web;
 
 namespace MikeRobbins.UrlLengthItemValidator
 {
@@ -12,22 +14,31 @@ namespace MikeRobbins.UrlLengthItemValidator
     {
         private IUrlValidator _urlValidator;
         private IUrlLengthCalculator _urlLengthCalculator;
+        private ISiteProvider _siteProvider;
 
         public UrlLengthValidator()
         {
+            //ToDo: Remove these, locator
             _urlValidator = new UrlValidator(new SettingsProvider());
             _urlLengthCalculator = new UrlLengthCalculator(new SitecoreLinkManager());
+            _siteProvider = new SiteProvider();
         }
 
         protected override ValidatorResult Evaluate()
         {
             Item item = this.GetItem();
 
-            int itemUrlLength = _urlLengthCalculator.GetItemUrlLength(item, "SiteName");
+            SiteInfo site = _siteProvider.GetSiteFromSiteItem(item);
 
-            bool isValidLength = _urlValidator.IsValidLength(itemUrlLength);
+            if (site != null)
+            {
+                int itemUrlLength = _urlLengthCalculator.GetItemUrlLength(item, site.Name);
 
-            return this.GetFailedResult(!isValidLength ? ValidatorResult.Warning : ValidatorResult.Valid);
+                bool isValidLength = _urlValidator.IsValidLength(itemUrlLength);
+                return this.GetFailedResult(!isValidLength ? ValidatorResult.Warning : ValidatorResult.Valid);
+            }
+
+            return this.GetFailedResult(ValidatorResult.Unknown);
         }
 
         protected override ValidatorResult GetMaxValidatorResult()
