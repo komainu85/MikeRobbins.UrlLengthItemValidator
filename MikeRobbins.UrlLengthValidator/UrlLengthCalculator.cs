@@ -6,7 +6,7 @@ namespace MikeRobbins.UrlLengthItemValidator
 {
     public class UrlLengthCalculator : IUrlLengthCalculator
     {
-        private ISitecoreLinkManager _sitecoreLinkManager;
+        private readonly ISitecoreLinkManager _sitecoreLinkManager;
 
         public UrlLengthCalculator(ISitecoreLinkManager sitecoreLinkManager)
         {

@@ -14,12 +14,11 @@ namespace MikeRobbins.UrlLengthItemValidator
 {
     public class UrlLengthValidator : StandardValidator
     {
-        private IUrlChecker _urlChecker;
-        private IUrlLengthCalculator _urlLengthCalculator;
-        private ISiteProvider _siteProvider;
+        private readonly IUrlChecker _urlChecker;
+        private readonly IUrlLengthCalculator _urlLengthCalculator;
+        private readonly ISiteProvider _siteProvider;
 
-        Container _container = new StructureMap.Container(new IoC.Registry());
-
+        readonly Container _container = new StructureMap.Container(new IoC.Registry());
 
         public UrlLengthValidator()
         {

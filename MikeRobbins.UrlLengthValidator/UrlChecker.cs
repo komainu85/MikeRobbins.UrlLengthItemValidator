@@ -8,7 +8,7 @@ namespace MikeRobbins.UrlLengthItemValidator
         private const string _maxUrlLength = "MaxUrlLength";
 
 
-        private ISettingsProvider _settingsProvider;
+        private readonly ISettingsProvider _settingsProvider;
 
         public UrlChecker(ISettingsProvider settingsProvider)
         {
