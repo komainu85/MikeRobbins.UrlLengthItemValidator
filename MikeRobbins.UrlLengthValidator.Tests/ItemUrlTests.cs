@@ -47,10 +47,10 @@ namespace MikeRobbins.UrlLengthItemValidator.Tests
             Mock<ISettingsProvider> settingsProvider = new Mock<ISettingsProvider>();
             settingsProvider.Setup(x => x.GetSetting(It.IsAny<string>())).Returns("100");
 
-            UrlValidator urlValidator = new UrlValidator(settingsProvider.Object);
+            UrlChecker urlChecker = new UrlChecker(settingsProvider.Object);
 
             //Act
-            bool valid = urlValidator.IsValidLength(itemUrlLength);
+            bool valid = urlChecker.IsValidLength(itemUrlLength);
 
             //Assert
             Assert.That(valid, Is.EqualTo(true));
@@ -65,10 +65,10 @@ namespace MikeRobbins.UrlLengthItemValidator.Tests
             Mock<ISettingsProvider> settingsProvider = new Mock<ISettingsProvider>();
             settingsProvider.Setup(x => x.GetSetting(It.IsAny<string>())).Returns("100");
 
-            UrlValidator urlValidator = new UrlValidator(settingsProvider.Object);
+            UrlChecker urlChecker = new UrlChecker(settingsProvider.Object);
 
             //Act
-            bool valid = urlValidator.IsValidLength(itemUrlLength);
+            bool valid = urlChecker.IsValidLength(itemUrlLength);
 
             //Assert
             Assert.That(valid, Is.EqualTo(false));

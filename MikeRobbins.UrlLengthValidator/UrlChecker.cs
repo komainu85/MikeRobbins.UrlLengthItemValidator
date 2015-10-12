@@ -3,14 +3,14 @@ using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
 
 namespace MikeRobbins.UrlLengthItemValidator
 {
-    public class UrlValidator : IUrlValidator
+    public class UrlChecker : IUrlChecker
     {
         private const string _maxUrlLength = "MaxUrlLength";
 
 
         private ISettingsProvider _settingsProvider;
 
-        public UrlValidator(ISettingsProvider settingsProvider)
+        public UrlChecker(ISettingsProvider settingsProvider)
         {
             _settingsProvider = settingsProvider;
         }

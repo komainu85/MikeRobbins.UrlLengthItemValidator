@@ -14,7 +14,7 @@ namespace MikeRobbins.UrlLengthItemValidator
 {
     public class UrlLengthValidator : StandardValidator
     {
-        private IUrlValidator _urlValidator;
+        private IUrlChecker _urlChecker;
         private IUrlLengthCalculator _urlLengthCalculator;
         private ISiteProvider _siteProvider;
 
@@ -23,7 +23,7 @@ namespace MikeRobbins.UrlLengthItemValidator
 
         public UrlLengthValidator()
         {
-            _urlValidator = _container.GetInstance<IUrlValidator>();
+            _urlChecker = _container.GetInstance<IUrlChecker>();
             _urlLengthCalculator = _container.GetInstance<IUrlLengthCalculator>();
             _siteProvider = _container.GetInstance<ISiteProvider>();
         }
@@ -38,7 +38,7 @@ namespace MikeRobbins.UrlLengthItemValidator
             {
                 int itemUrlLength = _urlLengthCalculator.GetItemUrlLength(item, site.Name);
 
-                bool isValidLength = _urlValidator.IsValidLength(itemUrlLength);
+                bool isValidLength = _urlChecker.IsValidLength(itemUrlLength);
                 return this.GetFailedResult(!isValidLength ? ValidatorResult.Warning : ValidatorResult.Valid);
             }
 

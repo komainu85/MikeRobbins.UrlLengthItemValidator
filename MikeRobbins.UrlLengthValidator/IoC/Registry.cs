@@ -16,7 +16,7 @@ namespace MikeRobbins.UrlLengthItemValidator.IoC
             For<ISitecoreLinkManager>().Use<SitecoreLinkManager>();
             For<ISiteProvider>().Use<SiteProvider>();
             For<IUrlLengthCalculator>().Use<UrlLengthCalculator>();
-            For<IUrlValidator>().Use<UrlValidator>();
+            For<IUrlChecker>().Use<UrlChecker>();
         }
     }
 }

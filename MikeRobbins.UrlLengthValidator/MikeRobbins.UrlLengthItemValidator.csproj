@@ -94,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IUrlLengthCalculator.cs" />
-    <Compile Include="Contracts\IUrlValidator.cs" />
+    <Compile Include="Contracts\IUrlChecker.cs" />
     <Compile Include="IoC\Registry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Contracts\ISitecoreLinkManager.cs" />
@@ -105,7 +105,7 @@
     <Compile Include="Providers\Implementation\SiteProvider.cs" />
     <Compile Include="UrlLengthCalculator.cs" />
     <Compile Include="UrlLengthValidator.cs" />
-    <Compile Include="UrlValidator.cs" />
+    <Compile Include="UrlChecker.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

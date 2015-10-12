@@ -1,6 +1,6 @@
 namespace MikeRobbins.UrlLengthItemValidator.Contracts
 {
-    public interface IUrlValidator
+    public interface IUrlChecker
     {
         bool IsValidLength(int itemUrlLength);
     }
