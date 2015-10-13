@@ -18,7 +18,9 @@ namespace MikeRobbins.UrlLengthItemValidator
         private readonly IUrlLengthCalculator _urlLengthCalculator;
         private readonly ISiteProvider _siteProvider;
 
-        readonly Container _container = new StructureMap.Container(new IoC.Registry());
+        private readonly Container _container = new StructureMap.Container(new IoC.Registry());
+
+        private int currentLength = 0;
 
         public UrlLengthValidator()
         {
@@ -35,13 +37,27 @@ namespace MikeRobbins.UrlLengthItemValidator
 
             if (site != null)
             {
-                int itemUrlLength = _urlLengthCalculator.GetItemUrlLength(item, site.Name);
+                currentLength = _urlLengthCalculator.GetItemUrlLength(item, site.Name);
 
-                bool isValidLength = _urlChecker.IsValidLength(itemUrlLength);
-                return this.GetFailedResult(!isValidLength ? ValidatorResult.Warning : ValidatorResult.Valid);
+                bool isValidLength = _urlChecker.IsValidLength(currentLength);
+
+                return Validate(isValidLength);
             }
 
             return this.GetFailedResult(ValidatorResult.Unknown);
+        }
+
+        private ValidatorResult Validate(bool isValidLength)
+        {
+            if (!isValidLength)
+            {
+                this.Text = string.Format("The full URL of this item is too long. URL length is {0}, Max is {1} ", currentLength, _urlChecker.MaxLengthAllowed());
+                return this.GetFailedResult(ValidatorResult.Warning);
+            }
+            else
+            {
+                return ValidatorResult.Valid;
+            }
         }
 
         protected override ValidatorResult GetMaxValidatorResult()
@@ -51,7 +67,11 @@ namespace MikeRobbins.UrlLengthItemValidator
 
         public override string Name
         {
-            get { return "Total Url Length too long"; }
+            get
+            {
+                return "URL too long";
+            }
         }
+
     }
 }

@@ -9,9 +9,11 @@ namespace MikeRobbins.UrlLengthItemValidator.Providers.Implementation
     {
         public string GetItemUrl(Item item, string siteName)
         {
-            UrlOptions urlOptions = new UrlOptions {Site = SiteContext.GetSite(siteName), LanguageEmbedding = LanguageEmbedding.Always};
+            SiteContext site = SiteContext.GetSite(siteName);
 
-            return LinkManager.GetItemUrl(item, urlOptions);
+            UrlOptions urlOptions = new UrlOptions { Site = site, LanguageEmbedding = LanguageEmbedding.Always };
+
+            return "http://" + site.HostName + LinkManager.GetItemUrl(item, urlOptions);
         }
     }
 }
