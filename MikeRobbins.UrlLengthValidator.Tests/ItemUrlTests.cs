@@ -42,15 +42,10 @@ namespace MikeRobbins.UrlLengthItemValidator.Tests
         public void Item_Url_Is_Less_Than_Max_Length()
         {
             //Arrange
-            int itemUrlLength = 50;
-
-            Mock<ISettingsProvider> settingsProvider = new Mock<ISettingsProvider>();
-            settingsProvider.Setup(x => x.GetSetting(It.IsAny<string>())).Returns("100");
-
-            UrlChecker urlChecker = new UrlChecker(settingsProvider.Object);
+            var urlChecker = CreateSettingsMock("100");
 
             //Act
-            bool valid = urlChecker.IsValidLength(itemUrlLength);
+            bool valid = urlChecker.IsValidLength(50);
 
             //Assert
             Assert.That(valid, Is.EqualTo(true));
@@ -60,19 +55,22 @@ namespace MikeRobbins.UrlLengthItemValidator.Tests
         public void Item_Url_Is_Greater_Than_Max_Length()
         {
             //Arrange
-            int itemUrlLength = 150;
-
-            Mock<ISettingsProvider> settingsProvider = new Mock<ISettingsProvider>();
-            settingsProvider.Setup(x => x.GetSetting(It.IsAny<string>())).Returns("100");
-
-            UrlChecker urlChecker = new UrlChecker(settingsProvider.Object);
+            var urlChecker = CreateSettingsMock("100");
 
             //Act
-            bool valid = urlChecker.IsValidLength(itemUrlLength);
+            bool valid = urlChecker.IsValidLength(150);
 
             //Assert
             Assert.That(valid, Is.EqualTo(false));
         }
 
+        private UrlChecker CreateSettingsMock(string settingReturnValue)
+        {
+            Mock<ISettingsProvider> settingsProvider = new Mock<ISettingsProvider>();
+            settingsProvider.Setup(x => x.GetSetting(It.IsAny<string>())).Returns(settingReturnValue);
+
+            UrlChecker urlChecker = new UrlChecker(settingsProvider.Object);
+            return urlChecker;
+        }
     }
 }
