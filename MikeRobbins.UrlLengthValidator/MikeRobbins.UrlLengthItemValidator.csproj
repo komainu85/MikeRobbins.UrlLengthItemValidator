@@ -83,6 +83,7 @@
   <ItemGroup>
     <Content Include="app_config\include\MikeRobbinsUrlLengthValidator.xml" />
     <Content Include="packages.config" />
+    <Content Include="serialization\master\sitecore\system\Settings\Validation Rules\Item Rules\Item\Url Length.item" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
