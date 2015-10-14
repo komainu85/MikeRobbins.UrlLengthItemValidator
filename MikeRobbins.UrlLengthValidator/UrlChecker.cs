@@ -16,7 +16,7 @@ namespace MikeRobbins.UrlLengthItemValidator
 
         public bool IsValidLength(int itemUrlLength)
         {
-            return itemUrlLength < MaxLengthAllowed();
+            return itemUrlLength <= MaxLengthAllowed();
         }
 
         public int MaxLengthAllowed()
