@@ -1,9 +1,9 @@
-﻿using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
+﻿using MikeRobbins.UrlLengthItemValidator.Contracts;
 using Sitecore.Data.Items;
 using Sitecore.Links;
 using Sitecore.Sites;
 
-namespace MikeRobbins.UrlLengthItemValidator.Providers.Implementation
+namespace MikeRobbins.UrlLengthItemValidator.Providers
 {
     public class SitecoreLinkManager : ISitecoreLinkManager
     {

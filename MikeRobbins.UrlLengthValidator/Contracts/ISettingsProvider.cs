@@ -1,4 +1,4 @@
-namespace MikeRobbins.UrlLengthItemValidator.Providers.Contracts
+namespace MikeRobbins.UrlLengthItemValidator.Contracts
 {
     public interface ISettingsProvider
     {

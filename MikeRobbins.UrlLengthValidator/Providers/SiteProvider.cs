@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Linq;
-using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
+using MikeRobbins.UrlLengthItemValidator.Contracts;
 using Sitecore.Data.Items;
-using Sitecore.Sites;
 using Sitecore.Web;
 
-namespace MikeRobbins.UrlLengthItemValidator.Providers.Implementation
+namespace MikeRobbins.UrlLengthItemValidator.Providers
 {
     public class SiteProvider : ISiteProvider
     {

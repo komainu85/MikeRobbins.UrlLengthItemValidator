@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MikeRobbins.UrlLengthItemValidator.Contracts;
-using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
-using MikeRobbins.UrlLengthItemValidator.Providers.Implementation;
+using MikeRobbins.UrlLengthItemValidator.Providers;
 
 namespace MikeRobbins.UrlLengthItemValidator.IoC
 {

@@ -1,7 +1,7 @@
 ﻿using Sitecore.Data.Items;
 using Sitecore.Web;
 
-namespace MikeRobbins.UrlLengthItemValidator.Providers.Contracts
+namespace MikeRobbins.UrlLengthItemValidator.Contracts
 {
     public interface ISiteProvider
     {

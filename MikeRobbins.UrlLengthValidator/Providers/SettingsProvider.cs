@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
+﻿using MikeRobbins.UrlLengthItemValidator.Contracts;
 using Sitecore.Configuration;
 
-namespace MikeRobbins.UrlLengthItemValidator.Providers.Implementation
+namespace MikeRobbins.UrlLengthItemValidator.Providers
 {
     public class SettingsProvider : ISettingsProvider
     {

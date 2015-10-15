@@ -1,7 +1,5 @@
 ﻿using System.Web;
 using MikeRobbins.UrlLengthItemValidator.Contracts;
-using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
-using MikeRobbins.UrlLengthItemValidator.Providers.Implementation;
 using Sitecore.Data.Items;
 using Sitecore.Data.Validators;
 using Sitecore.Globalization;

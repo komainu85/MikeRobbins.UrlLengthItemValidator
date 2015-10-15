@@ -1,5 +1,4 @@
 ﻿using MikeRobbins.UrlLengthItemValidator.Contracts;
-using MikeRobbins.UrlLengthItemValidator.Providers.Contracts;
 
 namespace MikeRobbins.UrlLengthItemValidator
 {
