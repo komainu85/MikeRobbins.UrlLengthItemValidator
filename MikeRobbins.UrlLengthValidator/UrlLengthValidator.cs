@@ -29,15 +29,18 @@ namespace MikeRobbins.UrlLengthItemValidator
         {
             Item item = this.GetItem();
 
-            SiteInfo site = _siteProvider.GetSiteFromSiteItem(item);
-
-            if (site != null)
+            if (item != null)
             {
-                int urlLength = _urlLengthCalculator.GetItemUrlLength(item, site.Name);
+                SiteInfo site = _siteProvider.GetSiteFromSiteItem(item);
 
-                bool isValidLength = _urlChecker.IsValidLength(urlLength);
+                if (site != null)
+                {
+                    int urlLength = _urlLengthCalculator.GetItemUrlLength(item, site.Name);
 
-                return Validate(isValidLength, urlLength);
+                    bool isValidLength = _urlChecker.IsValidLength(urlLength);
+
+                    return Validate(isValidLength, urlLength);
+                }
             }
 
             return this.GetFailedResult(ValidatorResult.Unknown);
