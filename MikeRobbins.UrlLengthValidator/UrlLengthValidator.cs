@@ -50,7 +50,7 @@ namespace MikeRobbins.UrlLengthItemValidator
         {
             if (!isValidLength)
             {
-                this.Text = string.Format("The full URL of this item is too long. URL length is {0}, Max is {1} ", urlLength, _urlChecker.MaxLengthAllowed());
+                this.Text = $"The full URL of this item is too long. URL length is {urlLength}, Max is {_urlChecker.MaxLengthAllowed()} ";
                 return this.GetFailedResult(ValidatorResult.Warning);
             }
             else
@@ -64,13 +64,6 @@ namespace MikeRobbins.UrlLengthItemValidator
             return this.GetFailedResult(ValidatorResult.Warning);
         }
 
-        public override string Name
-        {
-            get
-            {
-                return "URL too long";
-            }
-        }
-
+        public override string Name => "URL too long";
     }
 }

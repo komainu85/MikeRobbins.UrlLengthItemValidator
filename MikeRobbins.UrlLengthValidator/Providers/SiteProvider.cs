@@ -13,7 +13,6 @@ namespace MikeRobbins.UrlLengthItemValidator.Providers
 
             var siteInfoList = Sitecore.Configuration.Factory.GetSiteInfoList();
 
-
             foreach (SiteInfo siteInfo in siteInfoList)
             {
                 if (siteInfo.Domain != "sitecore" && !siteInfo.PhysicalFolder.Contains("sitecore") && item.Paths.FullPath.StartsWith(siteInfo.RootPath + siteInfo.StartItem, StringComparison.InvariantCultureIgnoreCase))
@@ -21,7 +20,6 @@ namespace MikeRobbins.UrlLengthItemValidator.Providers
                     site = siteInfo;
                 }
             }
-
 
             return site;
         }
